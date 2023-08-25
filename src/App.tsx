@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import HomeScreen from './screens/home';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import LoginScreen from './screens/login';
+import appointmentList from './screens/appintmentList';
 
-function App() {
+
+
+
+const App = ()  =>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container  mt-5  ">
+      <Router>
+        <Container>
+        <Route exact  path="/" component={HomeScreen} />
+
+        <Route exact path="/login" component={LoginScreen} />
+
+        <Route exact path="/list" component={appointmentList} />
+
+        
+
+        </Container>
+      </Router>
     </div>
   );
 }
+
+
 
 export default App;
