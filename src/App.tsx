@@ -14,7 +14,6 @@ const App = ()  =>{
   return (
     <div className="container  mt-5  ">
 
-      console.log('app')
       <Router>
         <Container>
         <Route exact  path="/" component={HomeScreen} />
